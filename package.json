@@ -1,0 +1,11 @@
+{
+  "name": "inspectiq",
+  "version": "2.6.0",
+  "description": "InspectIQ — AI-Powered Visual Receiving Inspection",
+  "scripts": {
+    "dev": "python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 5173 --reload",
+    "start": "python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 5173",
+    "test": "python -m pytest tests/ -v",
+    "benchmark": "python scripts/run_benchmark.py"
+  }
+}

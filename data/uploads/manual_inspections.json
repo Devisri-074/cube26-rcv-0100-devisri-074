@@ -1,0 +1,1841 @@
+[
+  {
+    "record_id": "REC-INSP-20260930-632C9FD4",
+    "po_number": "PO-2026-TEST-SHORT",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9643,
+    "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [],
+    "discrepancies": [
+      "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units)."
+    ],
+    "image_url": "/static/uploads/upload_20260930_161034_769cf0.png",
+    "created_at": "2026-09-30T21:40:34.390254",
+    "immutable_sha256": "4053a03661e8306d30a5e86d27638be3424320357780a5aa0b3eb8a800d1842d",
+    "po": {
+      "po_number": "PO-2026-TEST-SHORT",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-632C9FD4",
+      "po_number": "PO-2026-TEST-SHORT",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:40:34.390254",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9643,
+      "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.99,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [
+            {
+              "x": 0.23,
+              "y": 0.56,
+              "width": 0.53,
+              "height": 0.21,
+              "label": "Verified SKU Label",
+              "confidence": 0.95,
+              "color": "#00e676",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "FAIL",
+          "confidence": 0.98,
+          "expected_value": 24,
+          "observed_value": 22,
+          "discrepancy_delta": -2,
+          "reason": "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units).",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "Sound Carton Integrity",
+          "discrepancy_delta": null,
+          "reason": "Carton shows sound structural corners, intact fluting, and no puncture/collapse.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "No Visible Damage / Stains",
+          "observed_value": "Clean / Undamaged",
+          "discrepancy_delta": null,
+          "reason": "No moisture ingress, tears, crushing, or seal breaches detected.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [],
+      "discrepancies": [
+        "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units)."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.23,
+          "y": 0.23,
+          "width": 0.55,
+          "height": 0.25,
+          "label": "Quantity Shortage (22/24)",
+          "confidence": 0.97,
+          "color": "#ff9100",
+          "details": {}
+        },
+        {
+          "x": 0.23,
+          "y": 0.56,
+          "width": 0.53,
+          "height": 0.21,
+          "label": "Verified SKU Label",
+          "confidence": 0.95,
+          "color": "#00e676",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_shortage.png",
+        "image_url": "/static/uploads/upload_20260930_161034_769cf0.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T16:10:34.371876+00:00",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.1917,
+        "mean_luminance": 0.7807,
+        "processing_time_ms": 18.3
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 37.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:40:34.371940",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-SHORT",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:40:34.371970",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:40:34.389971",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:40:34.390144",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:40:34.390158",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:40:34.390189",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "4053a03661e8306d30a5e86d27638be3424320357780a5aa0b3eb8a800d1842d"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-E657BB3D",
+    "po_number": "PO-2026-TEST-CRUSH",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9557,
+    "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [
+      "CRUSHED_CARTON"
+    ],
+    "discrepancies": [
+      "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+      "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+    ],
+    "image_url": "/static/uploads/upload_20260930_161034_4dd53d.png",
+    "created_at": "2026-09-30T21:40:34.257178",
+    "immutable_sha256": "6f26ced1f6355f9028967188d41da4102f5f5d071071388c25889fc461041a1f",
+    "po": {
+      "po_number": "PO-2026-TEST-CRUSH",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-E657BB3D",
+      "po_number": "PO-2026-TEST-CRUSH",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:40:34.257178",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9557,
+      "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "FAIL",
+          "confidence": 0.94,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "1 defect(s) detected",
+          "reason": "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "FAIL",
+          "confidence": 0.96,
+          "expected_value": "Zero Defect Condition",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "Physical Damage Present",
+          "reason": "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation).",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [
+        "CRUSHED_CARTON"
+      ],
+      "discrepancies": [
+        "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+        "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.67,
+          "y": 0.18,
+          "width": 0.15,
+          "height": 0.17,
+          "label": "CRUSHED CORNER (>25% deformation)",
+          "confidence": 0.96,
+          "color": "#ff1744",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_crushed.png",
+        "image_url": "/static/uploads/upload_20260930_161034_4dd53d.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T16:10:34.228929+00:00",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.2031,
+        "mean_luminance": 0.7729,
+        "processing_time_ms": 28.12
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 222.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:40:34.229043",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-CRUSH",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:40:34.229092",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:40:34.256681",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:40:34.256977",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:40:34.257009",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:40:34.257077",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "6f26ced1f6355f9028967188d41da4102f5f5d071071388c25889fc461041a1f"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-B3278E15",
+    "po_number": "PO-2026-TEST-001",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "ACCEPT",
+    "overall_confidence": 0.9614,
+    "summary": "ACCEPT: Shipment fully conforms to Purchase Order and Quality Standards (All 7 checks PASSED).",
+    "detected_damages": [],
+    "discrepancies": [],
+    "image_url": "/static/uploads/upload_20260930_161033_98659d.png",
+    "created_at": "2026-09-30T21:40:34.078625",
+    "immutable_sha256": "523ddabb1ead36aa4e667764875868d45585f5b8ad3ba01f89ce2a74fe1fa583",
+    "po": {
+      "po_number": "PO-2026-TEST-001",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-B3278E15",
+      "po_number": "PO-2026-TEST-001",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:40:34.078625",
+      "verdict": "ACCEPT",
+      "overall_confidence": 0.9614,
+      "summary": "ACCEPT: Shipment fully conforms to Purchase Order and Quality Standards (All 7 checks PASSED).",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.99,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [
+            {
+              "x": 0.23,
+              "y": 0.23,
+              "width": 0.55,
+              "height": 0.25,
+              "label": "Verified 24 Units (Blue)",
+              "confidence": 0.96,
+              "color": "#00e676",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "Sound Carton Integrity",
+          "discrepancy_delta": null,
+          "reason": "Carton shows sound structural corners, intact fluting, and no puncture/collapse.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "No Visible Damage / Stains",
+          "observed_value": "Clean / Undamaged",
+          "discrepancy_delta": null,
+          "reason": "No moisture ingress, tears, crushing, or seal breaches detected.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [],
+      "discrepancies": [],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.23,
+          "y": 0.56,
+          "width": 0.53,
+          "height": 0.21,
+          "label": "Shipping Label (Conforming)",
+          "confidence": 0.98,
+          "color": "#00e676",
+          "details": {}
+        },
+        {
+          "x": 0.23,
+          "y": 0.23,
+          "width": 0.55,
+          "height": 0.25,
+          "label": "Verified 24 Units (Blue)",
+          "confidence": 0.96,
+          "color": "#00e676",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_conforming.png",
+        "image_url": "/static/uploads/upload_20260930_161033_98659d.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T16:10:34.062349+00:00",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.1949,
+        "mean_luminance": 0.7785,
+        "processing_time_ms": 16.19
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": false,
+      "dispute_claim_amount_usd": 0.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:40:34.062447",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-001",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:40:34.062491",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:40:34.078305",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:40:34.078519",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:40:34.078536",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:40:34.078567",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "523ddabb1ead36aa4e667764875868d45585f5b8ad3ba01f89ce2a74fe1fa583"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-AC337BB3",
+    "po_number": "PO-2026-LIVE-8806",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9557,
+    "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [
+      "CRUSHED_CARTON"
+    ],
+    "discrepancies": [
+      "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+      "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+    ],
+    "image_url": "/static/uploads/upload_20260930_160611_a8afcd.png",
+    "created_at": "2026-09-30T21:36:11.315228",
+    "immutable_sha256": "44a8c44026a88fea753a18276ce8a00916d8d59d94a9983fc1a2bf0010784e9c",
+    "po": {
+      "po_number": "PO-2026-LIVE-8806",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-AC337BB3",
+      "po_number": "PO-2026-LIVE-8806",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:36:11.315228",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9557,
+      "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "FAIL",
+          "confidence": 0.94,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "1 defect(s) detected",
+          "reason": "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "FAIL",
+          "confidence": 0.96,
+          "expected_value": "Zero Defect Condition",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "Physical Damage Present",
+          "reason": "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation).",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [
+        "CRUSHED_CARTON"
+      ],
+      "discrepancies": [
+        "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+        "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.67,
+          "y": 0.18,
+          "width": 0.15,
+          "height": 0.17,
+          "label": "CRUSHED CORNER (>25% deformation)",
+          "confidence": 0.96,
+          "color": "#ff1744",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "scenario_06_crushed.png",
+        "image_url": "/static/uploads/upload_20260930_160611_a8afcd.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T16:06:11.306597+00:00",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.2031,
+        "mean_luminance": 0.7729,
+        "processing_time_ms": 8.56
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 222.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:36:11.306682",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-LIVE-8806",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:36:11.306718",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:36:11.314988",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:36:11.315139",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:36:11.315152",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:36:11.315180",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "44a8c44026a88fea753a18276ce8a00916d8d59d94a9983fc1a2bf0010784e9c"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-60A32808",
+    "po_number": "PO-2026-LIVE-8805",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9571,
+    "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [
+      "WRONG_VARIANT"
+    ],
+    "discrepancies": [
+      "WRONG VARIANT DETECTED: Received 'Matte Black' instead of ordered 'Blue'."
+    ],
+    "image_url": "/static/uploads/upload_20260930_160539_af1255.png",
+    "created_at": "2026-09-30T21:35:39.794148",
+    "immutable_sha256": "606370fb75d62a85849e5d2bd36d2312ebb00082acab0cad18eadbf9b9c248d4",
+    "po": {
+      "po_number": "PO-2026-LIVE-8805",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-60A32808",
+      "po_number": "PO-2026-LIVE-8805",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:35:39.794148",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9571,
+      "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "FAIL",
+          "confidence": 0.97,
+          "expected_value": "Blue",
+          "observed_value": "Matte Black",
+          "discrepancy_delta": "Expected 'Blue', Received 'Matte Black'",
+          "reason": "WRONG VARIANT DETECTED: Received 'Matte Black' instead of ordered 'Blue'.",
+          "evidence_boxes": [
+            {
+              "x": 0.23,
+              "y": 0.23,
+              "width": 0.55,
+              "height": 0.25,
+              "label": "WRONG VARIANT: Matte Black (Expected Blue)",
+              "confidence": 0.97,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "Sound Carton Integrity",
+          "discrepancy_delta": null,
+          "reason": "Carton shows sound structural corners, intact fluting, and no puncture/collapse.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "No Visible Damage / Stains",
+          "observed_value": "Clean / Undamaged",
+          "discrepancy_delta": null,
+          "reason": "No moisture ingress, tears, crushing, or seal breaches detected.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [
+        "WRONG_VARIANT"
+      ],
+      "discrepancies": [
+        "WRONG VARIANT DETECTED: Received 'Matte Black' instead of ordered 'Blue'."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.23,
+          "y": 0.23,
+          "width": 0.55,
+          "height": 0.25,
+          "label": "WRONG VARIANT: Matte Black (Expected Blue)",
+          "confidence": 0.97,
+          "color": "#ff1744",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "scenario_05_wrong_variant.png",
+        "image_url": "/static/uploads/upload_20260930_160539_af1255.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T16:05:39.773139+00:00",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.2371,
+        "mean_luminance": 0.7606,
+        "processing_time_ms": 20.88
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 444.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:35:39.773262",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-LIVE-8805",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:35:39.773317",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:35:39.793462",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:35:39.793918",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:35:39.793961",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:35:39.794047",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "606370fb75d62a85849e5d2bd36d2312ebb00082acab0cad18eadbf9b9c248d4"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-DAC5032D",
+    "po_number": "PO-2026-TEST-SHORT",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9643,
+    "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [],
+    "discrepancies": [
+      "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units)."
+    ],
+    "image_url": "/static/uploads/upload_20260930_155547_4a4eba.png",
+    "created_at": "2026-09-30T21:25:48.074583",
+    "immutable_sha256": "57f818b3b926b8dc9224af139dea1748531938ce52fd8219fac18444b7c829a3",
+    "po": {
+      "po_number": "PO-2026-TEST-SHORT",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-DAC5032D",
+      "po_number": "PO-2026-TEST-SHORT",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:25:48.074583",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9643,
+      "summary": "EXCEPTION: Inbound discrepancies detected (1 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.99,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [
+            {
+              "x": 0.23,
+              "y": 0.56,
+              "width": 0.53,
+              "height": 0.21,
+              "label": "Verified SKU Label",
+              "confidence": 0.95,
+              "color": "#00e676",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "FAIL",
+          "confidence": 0.98,
+          "expected_value": 24,
+          "observed_value": 22,
+          "discrepancy_delta": -2,
+          "reason": "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units).",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "Sound Carton Integrity",
+          "discrepancy_delta": null,
+          "reason": "Carton shows sound structural corners, intact fluting, and no puncture/collapse.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "No Visible Damage / Stains",
+          "observed_value": "Clean / Undamaged",
+          "discrepancy_delta": null,
+          "reason": "No moisture ingress, tears, crushing, or seal breaches detected.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [],
+      "discrepancies": [
+        "SHORT SHIPMENT DETECTED: Expected: 24 | Observed: 22 | Difference: -2 (Missing 2 units)."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.23,
+          "y": 0.23,
+          "width": 0.55,
+          "height": 0.25,
+          "label": "Quantity Shortage (22/24)",
+          "confidence": 0.97,
+          "color": "#ff9100",
+          "details": {}
+        },
+        {
+          "x": 0.23,
+          "y": 0.56,
+          "width": 0.53,
+          "height": 0.21,
+          "label": "Verified SKU Label",
+          "confidence": 0.95,
+          "color": "#00e676",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_shortage.png",
+        "image_url": "/static/uploads/upload_20260930_155547_4a4eba.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T15:55:48.063411",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.1917,
+        "mean_luminance": 0.7807,
+        "processing_time_ms": 11.12
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 37.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:25:48.063459",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-SHORT",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:25:48.063486",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:25:48.074397",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:25:48.074506",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:25:48.074516",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:25:48.074536",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "57f818b3b926b8dc9224af139dea1748531938ce52fd8219fac18444b7c829a3"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-B32C8697",
+    "po_number": "PO-2026-TEST-CRUSH",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "EXCEPTION",
+    "overall_confidence": 0.9557,
+    "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+    "detected_damages": [
+      "CRUSHED_CARTON"
+    ],
+    "discrepancies": [
+      "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+      "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+    ],
+    "image_url": "/static/uploads/upload_20260930_155547_01e1d2.png",
+    "created_at": "2026-09-30T21:25:47.982791",
+    "immutable_sha256": "669ba024558af9ab1e4aeefb58c42aab01df60df1a688a71e42bb2e96045f7f3",
+    "po": {
+      "po_number": "PO-2026-TEST-CRUSH",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-B32C8697",
+      "po_number": "PO-2026-TEST-CRUSH",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:25:47.982791",
+      "verdict": "EXCEPTION",
+      "overall_confidence": 0.9557,
+      "summary": "EXCEPTION: Inbound discrepancies detected (2 check(s) failed). Supplier claim dossier generated.",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "FAIL",
+          "confidence": 0.94,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "1 defect(s) detected",
+          "reason": "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "FAIL",
+          "confidence": 0.96,
+          "expected_value": "Zero Defect Condition",
+          "observed_value": "CRUSHED_CARTON",
+          "discrepancy_delta": "Physical Damage Present",
+          "reason": "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation).",
+          "evidence_boxes": [
+            {
+              "x": 0.67,
+              "y": 0.18,
+              "width": 0.15,
+              "height": 0.17,
+              "label": "CRUSHED CORNER (>25% deformation)",
+              "confidence": 0.96,
+              "color": "#ff1744",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [
+        "CRUSHED_CARTON"
+      ],
+      "discrepancies": [
+        "Carton integrity compromised: Corner/wall crushing (>15% deformation)",
+        "INCOMING SHIPMENT DAMAGE: Detected Corner/wall crushing (>15% deformation)."
+      ],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.67,
+          "y": 0.18,
+          "width": 0.15,
+          "height": 0.17,
+          "label": "CRUSHED CORNER (>25% deformation)",
+          "confidence": 0.96,
+          "color": "#ff1744",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_crushed.png",
+        "image_url": "/static/uploads/upload_20260930_155547_01e1d2.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T15:55:47.970730",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.2031,
+        "mean_luminance": 0.7729,
+        "processing_time_ms": 12.0
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": true,
+      "dispute_claim_amount_usd": 222.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:25:47.970787",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-CRUSH",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:25:47.970815",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:25:47.982572",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:25:47.982702",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:25:47.982715",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:25:47.982741",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "669ba024558af9ab1e4aeefb58c42aab01df60df1a688a71e42bb2e96045f7f3"
+    }
+  },
+  {
+    "record_id": "REC-INSP-20260930-0B1032CD",
+    "po_number": "PO-2026-TEST-001",
+    "sku": "BLUE-BOTTLE-001",
+    "expected_quantity": 24,
+    "expected_variant": "Blue",
+    "supplier_name": "Apex Hydration Mfg Ltd",
+    "unit_price": 18.5,
+    "verdict": "ACCEPT",
+    "overall_confidence": 0.9614,
+    "summary": "ACCEPT: Shipment fully conforms to Purchase Order and Quality Standards (All 7 checks PASSED).",
+    "detected_damages": [],
+    "discrepancies": [],
+    "image_url": "/static/uploads/upload_20260930_155547_66d7af.png",
+    "created_at": "2026-09-30T21:25:47.862556",
+    "immutable_sha256": "b81d2acecd9bda4406febd80bdafc461d1259abcf25815176c8ecad35450e82a",
+    "po": {
+      "po_number": "PO-2026-TEST-001",
+      "sku": "BLUE-BOTTLE-001",
+      "asin_or_upc": "810092345001",
+      "expected_quantity": 24,
+      "units_per_carton": 12,
+      "expected_cartons": 2,
+      "expected_variant": "Blue",
+      "supplier_name": "Apex Hydration Mfg Ltd",
+      "unit_price": 18.5,
+      "required_components": [
+        "Bottle Body",
+        "Insulated Cap"
+      ]
+    },
+    "evidence_record": {
+      "record_id": "REC-INSP-20260930-0B1032CD",
+      "po_number": "PO-2026-TEST-001",
+      "sku": "BLUE-BOTTLE-001",
+      "created_at": "2026-09-30T21:25:47.862556",
+      "verdict": "ACCEPT",
+      "overall_confidence": 0.9614,
+      "summary": "ACCEPT: Shipment fully conforms to Purchase Order and Quality Standards (All 7 checks PASSED).",
+      "checks": {
+        "SKU_IDENTITY": {
+          "check_type": "SKU_IDENTITY",
+          "status": "PASS",
+          "confidence": 0.99,
+          "expected_value": "BLUE-BOTTLE-001",
+          "observed_value": "BLUE-BOTTLE-001",
+          "discrepancy_delta": null,
+          "reason": "SKU 'BLUE-BOTTLE-001' successfully verified against receiving label/barcode.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "QUANTITY_COUNT": {
+          "check_type": "QUANTITY_COUNT",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": 24,
+          "observed_value": 24,
+          "discrepancy_delta": 0,
+          "reason": "QUANTITY VERIFIED: Expected: 24 | Observed: 24 | Difference: 0. Exact PO match.",
+          "evidence_boxes": [
+            {
+              "x": 0.23,
+              "y": 0.23,
+              "width": 0.55,
+              "height": 0.25,
+              "label": "Verified 24 Units (Blue)",
+              "confidence": 0.96,
+              "color": "#00e676",
+              "details": {}
+            }
+          ],
+          "requires_operator_override": false
+        },
+        "VARIANT_SPEC": {
+          "check_type": "VARIANT_SPEC",
+          "status": "PASS",
+          "confidence": 0.96,
+          "expected_value": "Blue",
+          "observed_value": "Blue",
+          "discrepancy_delta": null,
+          "reason": "Observed variant 'Blue' matches PO specification 'Blue'.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "CARTON_INTEGRITY": {
+          "check_type": "CARTON_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "Intact, Structural Grade A",
+          "observed_value": "Sound Carton Integrity",
+          "discrepancy_delta": null,
+          "reason": "Carton shows sound structural corners, intact fluting, and no puncture/collapse.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "PACKAGING_DAMAGE": {
+          "check_type": "PACKAGING_DAMAGE",
+          "status": "PASS",
+          "confidence": 0.95,
+          "expected_value": "No Visible Damage / Stains",
+          "observed_value": "Clean / Undamaged",
+          "discrepancy_delta": null,
+          "reason": "No moisture ingress, tears, crushing, or seal breaches detected.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "COMPONENT_INTEGRITY": {
+          "check_type": "COMPONENT_INTEGRITY",
+          "status": "PASS",
+          "confidence": 0.94,
+          "expected_value": [
+            "Bottle Body",
+            "Insulated Cap"
+          ],
+          "observed_value": "All Present",
+          "discrepancy_delta": null,
+          "reason": "All 2 mandatory components/accessories verified present.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        },
+        "LABEL_BARCODE": {
+          "check_type": "LABEL_BARCODE",
+          "status": "PASS",
+          "confidence": 0.98,
+          "expected_value": "Authentic Standard Inbound Shipping Label",
+          "observed_value": "Legitimate Label Verified",
+          "discrepancy_delta": null,
+          "reason": "Shipping label barcode and text adhere to EDI standard formatting without tampering.",
+          "evidence_boxes": [],
+          "requires_operator_override": false
+        }
+      },
+      "detected_damages": [],
+      "discrepancies": [],
+      "missing_components": [],
+      "bounding_boxes": [
+        {
+          "x": 0.23,
+          "y": 0.56,
+          "width": 0.53,
+          "height": 0.21,
+          "label": "Shipping Label (Conforming)",
+          "confidence": 0.98,
+          "color": "#00e676",
+          "details": {}
+        },
+        {
+          "x": 0.23,
+          "y": 0.23,
+          "width": 0.55,
+          "height": 0.25,
+          "label": "Verified 24 Units (Blue)",
+          "confidence": 0.96,
+          "color": "#00e676",
+          "details": {}
+        }
+      ],
+      "image_metadata": {
+        "source": "manual_upload",
+        "original_filename": "test_conforming.png",
+        "image_url": "/static/uploads/upload_20260930_155547_66d7af.png",
+        "width": 640,
+        "height": 480,
+        "uploaded_at": "2026-09-30T15:55:47.848358",
+        "laplacian_sharpness": 0.99,
+        "contrast": 0.1949,
+        "mean_luminance": 0.7785,
+        "processing_time_ms": 14.13
+      },
+      "uncertainty_reasons": [],
+      "operator_action_required": null,
+      "supplier_dispute_eligible": false,
+      "dispute_claim_amount_usd": 0.0,
+      "audit_trail": [
+        {
+          "step_id": "STEP-001",
+          "timestamp": "2026-09-30T21:25:47.848455",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Ingesting PO manifest and receiving image",
+          "details": {
+            "po_number": "PO-2026-TEST-001",
+            "sku": "BLUE-BOTTLE-001",
+            "expected_quantity": 24,
+            "expected_variant": "Blue"
+          }
+        },
+        {
+          "step_id": "STEP-002",
+          "timestamp": "2026-09-30T21:25:47.848684",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Running low-level image processing & feature extraction",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-003",
+          "timestamp": "2026-09-30T21:25:47.862346",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Executing deterministic validation matrix",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-004",
+          "timestamp": "2026-09-30T21:25:47.862470",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Assessing evidence ambiguity and image fidelity",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-005",
+          "timestamp": "2026-09-30T21:25:47.862482",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Synthesizing checks into final inspection verdict",
+          "details": {}
+        },
+        {
+          "step_id": "STEP-006",
+          "timestamp": "2026-09-30T21:25:47.862505",
+          "actor": "ReceivingInspectionAgent",
+          "action": "Building immutable dispute dossier with SHA-256 seal",
+          "details": {}
+        }
+      ],
+      "immutable_sha256": "b81d2acecd9bda4406febd80bdafc461d1259abcf25815176c8ecad35450e82a"
+    }
+  }
+]

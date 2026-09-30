@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspectIQ — AI-Powered Visual Receiving Inspection</title>
+    <meta name="description" content="Autonomous Visual Inbound PO Verification & Quality Intelligence for Warehouse Operations">
+    <link rel="stylesheet" href="/static/ui/css/style.css">
+</head>
+<body>
+
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="brand-wrapper">
+            <div class="brand-logo" id="brandLogo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <div class="brand-title-row">
+                    <h1>InspectIQ</h1>
+                    <span class="brand-badge">v2.6</span>
+                </div>
+                <p>AI-Powered Visual Receiving Inspection</p>
+            </div>
+        </div>
+
+        <div class="header-status-group">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>ENGINE: ONLINE</span>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot dot-calibrated"></span>
+                <span>ZERO-HALLUCINATION: ENFORCED</span>
+            </div>
+            
+            <!-- User Profile & Persona Switcher -->
+            <div class="user-profile-badge" id="btnUserModal" title="Click to Switch Operator / Role Login">
+                <div class="user-avatar-circle" id="userAvatar">DP</div>
+                <div class="user-meta-info">
+                    <span class="user-meta-name" id="userName">Devis Patel</span>
+                    <span class="user-meta-role" id="userRole">RECEIVING SPECIALIST</span>
+                </div>
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" style="opacity: 0.6;"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Ribbon -->
+    <nav class="nav-ribbon">
+        <div class="nav-tabs">
+            <button class="nav-tab-btn active" data-tab="tab-workspace" id="navTabWorkspace">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                Inspection Workspace
+            </button>
+            <button class="nav-tab-btn" data-tab="tab-dossier" id="navTabDossier">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/></svg>
+                Inspection Report & Dossier
+            </button>
+            <button class="nav-tab-btn" data-tab="tab-benchmark" id="navTabBenchmark">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2z"/></svg>
+                Scenario Benchmark Suite
+            </button>
+            <button class="nav-tab-btn" data-tab="tab-upload" id="navTabUpload">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/></svg>
+                Manual Inbound Intake
+            </button>
+        </div>
+        <div class="dock-timestamp" id="dockClock">DOCK UTC: 2026-09-30 19:30:00</div>
+    </nav>
+
+    <!-- Main Viewport -->
+    <main class="main-viewport">
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: INSPECTION WORKSPACE -->
+        <!-- ========================================================================= -->
+        <section id="tab-workspace" class="tab-view active">
+
+            <!-- Executive KPI Row -->
+            <div class="kpi-row">
+                <div class="kpi-box kpi-pass">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Conforming Shipments</span>
+                        <span class="kpi-tag tag-pass">PASS</span>
+                    </div>
+                    <div class="kpi-number" style="color: var(--success);" id="kpiPassCount">12 <small>PASS (80%)</small></div>
+                </div>
+                <div class="kpi-box kpi-exception">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Discrepancies / Damage</span>
+                        <span class="kpi-tag tag-exception">EXCEPTION</span>
+                    </div>
+                    <div class="kpi-number" style="color: var(--warning);" id="kpiExceptionCount">5 <small>EXCEPTION</small></div>
+                </div>
+                <div class="kpi-box kpi-uncertain">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Epistemic Uncertainty</span>
+                        <span class="kpi-tag tag-uncertain">UNCERTAIN</span>
+                    </div>
+                    <div class="kpi-number" style="color: var(--uncertain);" id="kpiUncertainCount">3 <small>REVIEW REQUIRED</small></div>
+                </div>
+                <div class="kpi-box kpi-reject">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Critical Mismatches</span>
+                        <span class="kpi-tag tag-reject">REJECT</span>
+                    </div>
+                    <div class="kpi-number" style="color: var(--danger);" id="kpiRejectCount">1 <small>REJECT</small></div>
+                </div>
+            </div>
+
+            <!-- Prominent Demo / Test Scenario Quick Selector Bar -->
+            <div class="demo-selector-bar">
+                <div class="demo-selector-label">
+                    <span class="demo-pulse"></span>
+                    <strong>DEMO SCENARIOS:</strong>
+                </div>
+                <div class="demo-pills-list">
+                    <button class="demo-pill-btn active" data-scenario="SCENARIO_01_CORRECT" id="pillCorrect">
+                        <span class="pill-dot dot-pass"></span>
+                        <span class="pill-title">1. Correct Shipment</span>
+                        <span class="pill-badge badge-pass">PASS</span>
+                    </button>
+                    <button class="demo-pill-btn" data-scenario="SCENARIO_02_SHORTAGE" id="pillShortage">
+                        <span class="pill-dot dot-exception"></span>
+                        <span class="pill-title">2. Short Shipment (-2 Qty)</span>
+                        <span class="pill-badge badge-exception">EXCEPTION</span>
+                    </button>
+                    <button class="demo-pill-btn" data-scenario="SCENARIO_04_WRONG_SKU" id="pillWrongSku">
+                        <span class="pill-dot dot-reject"></span>
+                        <span class="pill-title">3. Wrong SKU</span>
+                        <span class="pill-badge badge-reject">REJECT</span>
+                    </button>
+                    <button class="demo-pill-btn" data-scenario="SCENARIO_06_CRUSHED" id="pillDamage">
+                        <span class="pill-dot dot-exception"></span>
+                        <span class="pill-title">4. Damage (Crushed)</span>
+                        <span class="pill-badge badge-exception">EXCEPTION</span>
+                    </button>
+                    <button class="demo-pill-btn" data-scenario="SCENARIO_10_AMBIGUOUS_BLUR" id="pillUncertain">
+                        <span class="pill-dot dot-uncertain"></span>
+                        <span class="pill-title">5. Uncertain Image (Blur)</span>
+                        <span class="pill-badge badge-uncertain">UNCERTAIN</span>
+                    </button>
+                </div>
+                <div class="demo-selector-actions">
+                    <button class="demo-toggle-drawer-btn" id="btnToggleDrawer" title="View all 13 canonical and edge test scenarios">
+                        <span>All 13 Scenarios</span>
+                        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Workflow Progress Stepper -->
+            <div class="stepper-bar">
+                <div class="stepper-step active" id="stIngest"><span class="stepper-num">1</span><span>PO Ingest</span></div>
+                <div class="stepper-step active" id="stPerceive"><span class="stepper-num">2</span><span>Shipment Photo</span></div>
+                <div class="stepper-step active" id="stDeterministic"><span class="stepper-num">3</span><span>AI Vision Analysis</span></div>
+                <div class="stepper-step active" id="stUncertainty"><span class="stepper-num">4</span><span>Expected vs Observed</span></div>
+                <div class="stepper-step active" id="stArbitrate"><span class="stepper-num">5</span><span>Final Decision</span></div>
+                <div class="stepper-step active" id="stSealed"><span class="stepper-num">6</span><span>Evidence Dossier</span></div>
+            </div>
+
+            <!-- 3-Column Cockpit Grid -->
+            <div class="cockpit-grid">
+
+                <!-- Left Column: Scenario Manifests & Presets -->
+                <div class="card-panel cockpit-col-manifest" id="manifestSidebar">
+                    <div class="card-panel-header">
+                        <h2>
+                            <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/><path d="M4 4h8v1H4V4zm0 2h8v1H4V6zm0 2h8v1H4V8zm0 2h4v1H4v-1z"/></svg>
+                            Inbound Shipments
+                        </h2>
+                        <div class="scenario-filter-group">
+                            <button class="filter-chip active" id="filterCore" data-filter="core">Core 5</button>
+                            <button class="filter-chip" id="filterAll" data-filter="all">All 13</button>
+                            <button class="filter-chip" id="filterManual" data-filter="manual">Manual (<span id="manualCountBadge">0</span>)</button>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.73rem; color: var(--text-secondary); line-height: 1.35;">
+                        Select an inbound shipment to inspect PO match, visual integrity, and discrepancies:
+                    </div>
+
+                    <div class="scenario-list-scroll" id="scenarioList">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Center Column: Visual Viewer & Side-by-Side Comparison Matrix -->
+                <div class="cockpit-col-center" style="display: flex; flex-direction: column; gap: 1rem;">
+
+                    <!-- Canvas Viewport with HUD Controls -->
+                    <div class="vision-canvas-container">
+                        <canvas id="inspectionCanvas"></canvas>
+                        
+                        <div class="canvas-controls-overlay">
+                            <label class="control-toggle" title="Toggle object and defect detection boxes">
+                                <input type="checkbox" id="toggleBoxes" checked> Bounding Boxes
+                            </label>
+                            <label class="control-toggle" title="Toggle HUD telemetry labels">
+                                <input type="checkbox" id="toggleLabels" checked> Labels
+                            </label>
+                            <label class="control-toggle" title="Toggle structural strain heatmap">
+                                <input type="checkbox" id="toggleHeatmap"> 🌡️ Strain Heatmap
+                            </label>
+                            <label class="control-toggle" title="Toggle dimensional measurement grid">
+                                <input type="checkbox" id="toggleGrid"> 📐 Measurement Grid
+                            </label>
+                            <button class="btn-canvas-action" id="btnResetView" title="Reset Zoom / Pan">Reset View</button>
+                        </div>
+
+                        <!-- Canvas Image Meta Overlay -->
+                        <div class="canvas-meta-tag" id="canvasMetaTag">
+                            <span id="canvasImageResolution">Resolution: 1024×768</span>
+                            <span>•</span>
+                            <span id="canvasSharpnessScore">Sharpness: 0.92</span>
+                        </div>
+                    </div>
+
+                    <!-- Side-by-Side Expected vs. Observed Verification Matrix -->
+                    <div class="card-panel inspection-matrix-panel">
+                        <div class="card-panel-header">
+                            <div class="matrix-title-group">
+                                <h2>AI Vision Verification Matrix (Expected vs. Observed)</h2>
+                                <span class="badge-status badge-pass">CALIBRATED MATH ENGINE</span>
+                            </div>
+                        </div>
+
+                        <div class="table-scroll">
+                            <table class="data-table" id="matrixTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 18%;">Inspection Dimension</th>
+                                        <th style="width: 12%;">Verdict</th>
+                                        <th style="width: 15%;">Expected (PO)</th>
+                                        <th style="width: 15%;">Observed (Photo)</th>
+                                        <th style="width: 14%;">Variance / Delta</th>
+                                        <th style="width: 26%;">Detailed Grounded Evidence</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="matrixTableBody">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Real-Time Agent Execution & Perception Telemetry Stream -->
+                    <div class="card-panel telemetry-panel">
+                        <div class="card-panel-header" style="padding-bottom: 0.4rem;">
+                            <h2 style="font-size: 0.82rem;">
+                                <span class="telemetry-pulse"></span>
+                                Perception Execution Stream
+                            </h2>
+                            <span class="badge-status" style="background: rgba(59,130,246,0.1); color: #60a5fa; font-size: 0.65rem;">Grounded Telemetry</span>
+                        </div>
+                        <div class="thought-stream-box" id="thoughtStream">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Final Decision & Evidence Findings -->
+                <div class="card-panel cockpit-col-decision">
+                    
+                    <!-- Verdict Hero Card -->
+                    <div id="decisionHero" class="verdict-banner ACCEPT">
+                        <div class="verdict-header-tag">INSPECTION DECISION</div>
+                        <div id="heroVerdictTitle" class="verdict-title">PASS</div>
+                        <p id="heroVerdictSummary" class="verdict-summary">-</p>
+
+                        <div class="confidence-container">
+                            <div class="confidence-header">
+                                <span id="confText">CALIBRATED CONFIDENCE: 98%</span>
+                                <span class="confidence-type" id="confType">Mathematically Grounded</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div id="confFill" class="confidence-fill" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operator Guidance Box (When UNCERTAIN) -->
+                    <div id="operatorGuidanceBox" class="guidance-box" style="display: none;">
+                        <div class="guidance-title">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+                            MANDATORY OPERATOR ACTION REQUIRED:
+                        </div>
+                        <p class="guidance-desc" id="operatorGuidanceText">-</p>
+                    </div>
+
+                    <!-- Dispute Claim Callout (When EXCEPTION) -->
+                    <div id="disputeClaimCallout" class="dispute-callout-box" style="display: none;">
+                        <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Estimated Dispute Settlement Claim:</div>
+                        <div id="heroClaimAmount" style="font-size: 1.25rem; font-weight: 700; color: var(--warning); font-family: var(--font-mono);">$0.00 USD</div>
+                    </div>
+
+                    <!-- Physical Evidence & Detected Issues -->
+                    <div class="decision-section">
+                        <div class="card-panel-header" style="padding-bottom: 0.35rem;">
+                            <h2>Physical Evidence & Detected Issues</h2>
+                        </div>
+                        <ul id="discrepanciesList" class="evidence-findings-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <!-- Purchase Order Metadata Reference -->
+                    <div class="decision-section">
+                        <div class="card-panel-header" style="padding-bottom: 0.35rem;">
+                            <h2>Purchase Order Reference</h2>
+                        </div>
+                        <div class="po-grid">
+                            <div class="po-cell">
+                                <label>PO Number</label>
+                                <value id="poNumber">-</value>
+                            </div>
+                            <div class="po-cell">
+                                <label>Target SKU</label>
+                                <value id="poSKU">-</value>
+                            </div>
+                            <div class="po-cell">
+                                <label>Ordered Units</label>
+                                <value id="poQuantity">-</value>
+                            </div>
+                            <div class="po-cell">
+                                <label>Expected Variant</label>
+                                <value id="poVariant">-</value>
+                            </div>
+                            <div class="po-cell">
+                                <label>Supplier Name</label>
+                                <value id="poSupplier">-</value>
+                            </div>
+                            <div class="po-cell">
+                                <label>Unit Price</label>
+                                <value id="poUnitPrice">-</value>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cryptographic Seal Info -->
+                    <div class="audit-seal-box">
+                        <div class="seal-row"><span class="seal-label">RECORD ID:</span> <span id="recordId" class="seal-val">-</span></div>
+                        <div class="seal-row"><span class="seal-label">SHA-256 SEAL:</span> <span id="recordHash" class="seal-hash">-</span></div>
+                    </div>
+
+                    <button class="btn-primary btn-dossier-link" id="btnGoToDossier">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/></svg>
+                        View Official Inspection Report & Dossier
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: SUPPLIER DISPUTE DOSSIER & FINAL INSPECTION REPORT -->
+        <!-- ========================================================================= -->
+        <section id="tab-dossier" class="tab-view">
+            <div class="dossier-wrapper">
+                
+                <!-- Executive Certificate Report Card -->
+                <div class="card-panel dossier-panel">
+                    
+                    <div class="dossier-top-bar">
+                        <div class="dossier-brand-title">
+                            <h2>Certificate of Inbound Receiving Inspection & Quality Audit</h2>
+                            <p>Automated Visual Receiving Verification • EDI / Legal Standard Ready</p>
+                        </div>
+                        <div class="dossier-top-actions">
+                            <button class="btn-secondary" id="btnCopyDossier">📋 Copy Markdown Dossier</button>
+                            <button class="btn-primary" id="btnPrintDossier">🖨️ Print / Export PDF</button>
+                        </div>
+                    </div>
+
+                    <!-- 9-Field Executive Report Table -->
+                    <div class="report-fields-card">
+                        <div class="report-fields-header">
+                            <h3>Official Inspection Findings Summary</h3>
+                            <span class="badge-status badge-pass" id="reportHeaderVerdictBadge">PASS</span>
+                        </div>
+                        
+                        <div class="report-grid-9">
+                            <div class="report-grid-cell">
+                                <span class="rg-label">1. Purchase Order (PO)</span>
+                                <strong class="rg-value" id="repPoNumber">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">2. Target SKU</span>
+                                <strong class="rg-value" id="repSKU">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">3. Quantity (Expected vs Observed)</span>
+                                <strong class="rg-value" id="repQuantity">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">4. Variant (Ordered vs Received)</span>
+                                <strong class="rg-value" id="repVariant">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">5. Damage Status</span>
+                                <strong class="rg-value" id="repDamage">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">6. Final Decision</span>
+                                <strong class="rg-value" id="repDecision">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">7. Confidence Level</span>
+                                <strong class="rg-value" id="repConfidence">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">8. Grounded Evidence</span>
+                                <strong class="rg-value" id="repEvidence">-</strong>
+                            </div>
+                            <div class="report-grid-cell">
+                                <span class="rg-label">9. Verification Timestamp</span>
+                                <strong class="rg-value" id="repTimestamp">-</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Dispute Settlement Status Card -->
+                    <div class="dispute-financial-bar">
+                        <div>
+                            <span class="dfb-label">Dispute Action Status</span>
+                            <strong id="dossierEligible" class="dfb-status">-</strong>
+                        </div>
+                        <div style="text-align: right;">
+                            <span class="dfb-label">Financial Claim Settlement Amount</span>
+                            <strong id="dossierClaimAmount" class="dfb-amount">$0.00 USD</strong>
+                        </div>
+                    </div>
+
+                    <!-- Markdown Sheet Preview -->
+                    <div class="dossier-markdown-wrapper">
+                        <div class="markdown-tabs">
+                            <span class="markdown-tab-label">Raw Tamper-Sealed Markdown Dossier</span>
+                        </div>
+                        <pre class="dossier-sheet" id="markdownPreview">Loading inspection dossier...</pre>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: SCENARIO BENCHMARK SUITE -->
+        <!-- ========================================================================= -->
+        <section id="tab-benchmark" class="tab-view">
+            <div class="card-panel" style="gap: 1.5rem;">
+                <div class="card-panel-header">
+                    <div>
+                        <h2>Autonomous Test Scenario Verification Matrix (13 Scenarios)</h2>
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Evaluates 10 canonical challenge scenarios + 3 adversarial/edge conditions with latency SLAs and confusion matrix.</p>
+                    </div>
+                    <button class="btn-primary" id="btnRunBenchmark">⚡ Run Autonomous Test Benchmark</button>
+                </div>
+
+                <div class="kpi-row">
+                    <div class="kpi-box">
+                        <span class="kpi-label">Benchmark Accuracy</span>
+                        <div class="kpi-number" id="benchAccuracy" style="color: var(--primary);">100%</div>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">Validated Scenarios</span>
+                        <div class="kpi-number" id="benchPassed" style="color: var(--success);">13 / 13</div>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">Latency SLA (P50)</span>
+                        <div class="kpi-number" id="benchLatencyP50" style="color: #60a5fa;">&lt; 1ms</div>
+                    </div>
+                    <div class="kpi-box">
+                        <span class="kpi-label">Latency SLA (P95)</span>
+                        <div class="kpi-number" id="benchLatencyP95" style="color: var(--uncertain);">&lt; 3ms</div>
+                    </div>
+                </div>
+
+                <div class="table-scroll">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario ID</th>
+                                <th>Category</th>
+                                <th>Expected Oracle</th>
+                                <th>Agent Decision</th>
+                                <th>Evaluation</th>
+                                <th>Latency</th>
+                                <th>SHA-256 Seal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="benchmarkScorecardBody">
+                            <tr>
+                                <td colspan="7" style="text-align: center; color: var(--text-secondary); padding: 2.5rem;">Click "⚡ Run Autonomous Test Benchmark" above to evaluate all 13 canonical & adversarial scenarios.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 4: MANUAL INBOUND INTAKE -->
+        <!-- ========================================================================= -->
+        <section id="tab-upload" class="tab-view">
+            <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="card-panel" style="gap: 1.25rem;">
+                    <div class="card-panel-header">
+                        <div>
+                            <h2>Manual Inbound Receiving Intake (Live Inspection)</h2>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Upload a shipment photograph and specify PO parameters to run the InspectIQ Vision Agent.</p>
+                        </div>
+                        <span class="badge-status badge-pass">Live Intake Active</span>
+                    </div>
+
+                    <!-- Quick Pre-fill PO Presets -->
+                    <div class="preset-pill-group">
+                        <span style="font-size: 0.72rem; color: var(--text-secondary); font-family: var(--font-mono);">Sample Presets:</span>
+                        <button type="button" class="preset-btn" id="presetBlue24">Standard Blue (24 Qty)</button>
+                        <button type="button" class="preset-btn" id="presetBlack12">Matte Black (12 Qty)</button>
+                        <button type="button" class="preset-btn" id="presetGreen48">Alpine Green (48 Qty)</button>
+                    </div>
+
+                    <form id="customUploadForm" class="custom-intake-form">
+                        
+                        <!-- File Drop Zone -->
+                        <div class="file-drop-zone" id="fileDropZone">
+                            <input type="file" id="customImageFile" name="file" accept="image/*" class="file-input-hidden">
+                            <div class="drop-zone-content">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <div style="font-weight: 600; font-size: 0.9rem; color: #fff;">Click to select or drag & drop receiving photograph</div>
+                                <div style="font-size: 0.74rem; color: var(--text-secondary);" id="selectedFileName">Supports PNG, JPG, WEBP (High-res dock photos)</div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Sample Images Picker -->
+                        <div class="sample-images-row">
+                            <span style="font-size: 0.72rem; color: var(--text-secondary);">Or pick a pre-loaded condition photo:</span>
+                            <div class="sample-imgs-list">
+                                <button type="button" class="btn-sample-img active" data-img="/static/images/scenario_01_correct.png">1. Standard Pack (Pass)</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_02_shortage.png">2. Shortage (-2 Qty)</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_04_wrong_sku.png">3. Wrong SKU (Reject)</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_05_wrong_variant.png">4. Wrong Color (Black)</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_06_crushed.png">5. Crushed Carton (Damage)</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_07_water_damage.png">6. Water Damage</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_08_torn_packaging.png">7. Torn Packaging</button>
+                                <button type="button" class="btn-sample-img" data-img="/static/images/scenario_10_ambiguous_blur.png">8. Blurred Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- Purchase Order Form Grid -->
+                        <div class="intake-form-grid">
+                            <div class="form-field">
+                                <label>PO Number</label>
+                                <input type="text" name="po_number" id="inputPoNumber" value="PO-2026-LIVE-8801" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Target SKU</label>
+                                <input type="text" name="sku" id="inputSku" value="BLUE-BOTTLE-001" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Barcode / UPC</label>
+                                <input type="text" name="asin_or_upc" id="inputUpc" value="810092345001">
+                            </div>
+                            <div class="form-field">
+                                <label>Expected Total Units</label>
+                                <input type="number" name="expected_quantity" id="inputQty" value="24" min="1" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Units Per Master Carton</label>
+                                <input type="number" name="units_per_carton" id="inputUnitsPerCarton" value="12" min="1" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Expected Variant</label>
+                                <input type="text" name="expected_variant" id="inputVariant" value="Blue" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Supplier Name</label>
+                                <input type="text" name="supplier_name" id="inputSupplier" value="Apex Hydration Mfg Ltd" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Unit Price (USD)</label>
+                                <input type="number" step="0.01" name="unit_price" id="inputUnitPrice" value="18.50" required>
+                            </div>
+                            <div class="form-field" style="grid-column: span 2;">
+                                <label>Required Accessories / Parts</label>
+                                <input type="text" name="required_components" id="inputComponents" value="Bottle Body, Insulated Cap">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit-intake" id="btnSubmitCustom">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            Run Visual AI Inspection
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Saved Manual Intake Inspections History Card -->
+                <div class="card-panel" style="gap: 1rem;" id="manualHistoryCard">
+                    <div class="card-panel-header">
+                        <div>
+                            <h2>
+                                <svg width="16" height="16" fill="var(--primary)" viewBox="0 0 16 16"><path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .602.37l-.656.77zm1.18 1.05a7.005 7.005 0 0 0-.585-.483l.63-.775c.29.236.563.49.816.76l-.86.498zm.895 1.34c-.16-.2-.332-.387-.514-.562l.708-.707c.23.22.446.456.647.707l-.841.562zm.56 1.54a7.003 7.003 0 0 0-.298-.985l.976-.219c.143.366.257.743.342 1.126l-.933.36zM14.5 8c0 .17-.008.337-.022.503l.997.074A8.001 8.001 0 0 0 16 8h-1.5zm-.45 2.004a7.003 7.003 0 0 0-.299.985l.976.219c.086-.383.2-.76.342-1.126l-.933-.36zm-.71 1.37a7.01 7.01 0 0 0-.27.439l.87.493c.197-.348.37-.602.37-.602l-.77-.656zm-1.05 1.18a7.005 7.005 0 0 0-.483.585l.775.63c.236-.29.49-.563.76-.816l-.498-.86zm-1.34.895a7.003 7.003 0 0 0-.562.514l.707.708c.22-.23.456-.446.707-.647l-.562-.841zm-1.54.56a7.003 7.003 0 0 0-.985.298l-.219.976c.366.143.743.257 1.126.342l.36-.933zM8 14.5a7 7 0 0 0-.503-.022l-.074.997A8.001 8.001 0 0 0 8 16v-1.5zm-2.004-.45a7.003 7.003 0 0 0-.985-.299l-.219.976c.383.086.76.2 1.126.342l.36-.933zm-1.37-.71a7.01 7.01 0 0 0-.439-.27l-.493.87c.348.197.602.37.602.37l.656-.77zm-1.18-1.05a7.005 7.005 0 0 0-.585-.483l-.63.775c.29.236.563.49.816.76l.498-.86zm-.895-1.34a7.003 7.003 0 0 0-.514-.562l-.708.707c.22.23.456.446.647.707l.562-.841zm-.56-1.54a7.003 7.003 0 0 0-.298-.985l-.976.219c.143.366.257.743.342 1.126l.933-.36zM1.5 8c0-.17.008-.337.022-.503l-.997-.074A8.001 8.001 0 0 0 0 8h1.5zm.45-2.004a7.003 7.003 0 0 0 .299-.985l-.976-.219c-.086.383-.2.76-.342 1.126l.933.36zm.71-1.37a7.01 7.01 0 0 0 .27-.439l-.87-.493c-.197.348-.37.602-.37.602l.77.656zm1.05-1.18a7.005 7.005 0 0 0 .483-.585l-.775-.63a8.005 8.005 0 0 1-.76.816l.86.498zm1.34-.895a7.003 7.003 0 0 0 .562-.514l-.707-.708a8.005 8.005 0 0 1-.707.647l.841.562zm1.54-.56a7.003 7.003 0 0 0 .985-.298l.219-.976A8.004 8.004 0 0 1 8 0v1.5z"/><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/></svg>
+                                Saved Manual Receiving Inspections
+                            </h2>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Persistent archive of all manually uploaded receiving photographs and verification audit findings.</p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button class="btn-secondary" id="btnClearManualHistory" style="padding: 0.35rem 0.75rem; font-size: 0.72rem;">Clear History</button>
+                        </div>
+                    </div>
+
+                    <div id="manualHistoryContainer" class="manual-history-list">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Login & Role Persona Modal -->
+    <div class="modal-backdrop" id="userModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Operator Authentication & Role Switcher</h3>
+                <button class="modal-close-btn" id="btnCloseUserModal">✕</button>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">
+                Select an enterprise role persona or log in to attribute inspection audit signatures:
+            </p>
+            <div class="persona-picker-list" id="personaList">
+                <!-- Personas dynamically loaded -->
+            </div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+                <button class="btn-secondary" id="btnCloseModalBottom">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/ui/js/canvas_annotator.js"></script>
+    <script src="/static/ui/js/app.js"></script>
+</body>
+</html>

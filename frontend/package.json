@@ -1,0 +1,7 @@
+{
+  "name": "inspectiq-frontend",
+  "version": "2.6.0",
+  "scripts": {
+    "dev": "python -m uvicorn backend.app.main:app --app-dir .. --host 127.0.0.1 --port 5173 --reload"
+  }
+}

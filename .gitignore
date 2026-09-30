@@ -1,9 +1,30 @@
-.env
-.env.*
-!.env.example
-node_modules/
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
 .venv/
 venv/
-.DS_Store
+ENV/
+env/
+
+# Nested duplicate folder
+cube/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs & Environment
+*.log
+.env
+.env.local
+.env.*.local
