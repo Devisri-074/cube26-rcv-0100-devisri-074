@@ -62,54 +62,6 @@ The project contains **13 benchmark scenarios** covering the challenge requireme
 | 12 | Sealed box | UNCERTAIN | UNCERTAIN | ✅ PASS |
 | 13 | Adversarial label | EXCEPTION | EXCEPTION | ✅ PASS |
 
-Your current version has this information, but it is all compressed into lines instead of being formatted as Markdown. :chatgpt-content-reference{index="1"}
-
-### I recommend making the README look like this structure:
-
-```text
-# InspectIQ™
-
-> Short project description
-
-## 🚀 Project Overview
-
-## 1. Problem Understanding
-
-### Problems with Traditional Receiving
-
-### InspectIQ Workflow
-
-## 2. Solution Overview
-
-### Visual Perception
-
-### Deterministic Verification
-
-### Uncertainty Gate
-
-## 3. Inspection Decisions
-
-| Decision | Meaning |
-|---|---|
-
-## 4. What InspectIQ Checks
-
-### Product / SKU
-### Quantity
-### Product Variant
-### Carton Condition
-### Components
-### Image Quality
-
-## 5. Evidence-First Design
-
-## 6. Evidence Dossier
-
-## 7. System Architecture
-
-```text
-architecture diagram
-```
 
 ## 8. Technology Stack
 
